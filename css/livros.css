@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+aside {
+    width: 20%;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+aside ul li {
+    margin-bottom: 0.5rem;
+}
+aside ul li a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+aside ul li a:hover {
+    text-decoration: underline;
+}
+main {
+    margin-left: 20%;
+    padding: 2rem;
+    width: 80%;
+}
+.livro {
+    display: none;
+    flex-direction: row;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.livro.active {
+    display: flex;
+}
+.livro img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.livro h2 {
+    margin: 0 0 0.5rem;
+}
+.livro p {
+    margin: 0.5rem 0;
+}
+.links {
+    margin-top: 1rem;
+}
+.links a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+.links a:hover {
+    text-decoration: underline;
+}
+
+main ul{
+    list-style: none;
+
+    li{
+        margin-bottom: 40px;
+    }
+}

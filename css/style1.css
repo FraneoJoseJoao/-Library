@@ -3,8 +3,13 @@ body{
     margin: 0;
     height: 600vh;
     width: 100vw;
-    background-color: #90836a;
+    background-color:  #F5F5DC;
     color: #000;
+    background-image: url('../multimedia/pexels-mccutcheon-1148399.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a{
@@ -17,20 +22,28 @@ a{
     left: 0;
     top: 0;
     width: 100%;
-    height: 20vh;
-    background-color: rgb(140, 143, 146);
+    height: 15vh;
+    background-color:  #F5F5DC;
+    z-index: 5;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
-.cabecalho h1{
-    padding-right: 15px;
-    text-align: center;
-    font-size: 1.3rem;
-    font-weight: 100;
-    font-style: oblique;
+.logo{
+    height: 50px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    border-radius: 50%;
 
     strong{
         font-size: 1rem;
@@ -46,12 +59,19 @@ nav{
 li{
     height: 25px;
     width: 80px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:  Arial, Helvetica, sans-serif;
     margin: 4px;
     padding-top: 6px;
     list-style-type: none;
     font-weight: lighter;
     text-align: center;
+}
+
+li::first-letter {
+    font-size: 1rem; /* Aumenta o tamanho da letra */
+    font-weight: bold; /* Deixa a letra em negrito */
+    color: #000000; /* Define a cor da letra */
+    font-family: "Playfair Display", serif; /* Define a fonte */
 }
 
 li:hover{
@@ -71,12 +91,62 @@ li:last-child{
     }
 }
 
-.sec1{
+.texto{
+    width: 100%;
+    height: 40vh;
+    margin: 0 auto;
+    margin-top: 14vh;
+    font-size: 1rem;
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    
+    
+
+    p{
+        width: 50%;
+        color: #000;
+        padding: 18px 17px;
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: slideIn 1.5s ease-out forwards;
+        animation-delay: 0.5s;
+    }
+
+    .p1{
+        margin: 10px;
+        background-color: #F5F5DC;
+    }
+
+    .p3{
+        width: 27%;
+        text-align: center;
+        border: solid 1px #313131;
+        border-radius: 19px;
+        padding: 6px;
+        margin-left: 10px;
+    }
+    
+    .p2{
+        width: 30%;
+        background-color: #a2adc0;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+/* .sec1{
     height: 22vh;
     bottom: 0;
     position: fixed;
-    width: 100%;
-}
+    width: 90%;
+} */
 
 .animado{
     position: absolute;
@@ -87,25 +157,33 @@ li:last-child{
     align-items: center;
     justify-content: center;
     width: 400vw;
-    height: 500vw;
+    height: 400vw;
     max-width: 2000px;
     max-height: 2000px;
 }
 
 .livro_categoria{
-    background-color: aqua;
     position: absolute;
     left: 0;
     top: 0;
-    max-width: 200px;
+    max-width: 120px;
     aspect-ratio: 1 /1;
     cursor: pointer;
+    text-align: center;
+}
+
+.livro_categoria a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #242424;
+    font-weight: bold;
 }
 
 .livro_categoria img{
     width: 100%;
+    height: 140px;
     pointer-events: none;
     z-index: 999;
+    border-radius: 3px;
     cursor: pointer;
 }
 
@@ -117,18 +195,8 @@ li:last-child{
 }
 
 .scroll-down-icon img{
-    width: 50px;
+    width: 100px;
 }
 
-.scroll-down{
-    position: fixed;
-    top: 0.2rem;
-    left: 1rem;
-    color: #000;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 10px;
-    overflow: visible;
-}
 
 

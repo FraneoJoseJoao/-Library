@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Effect</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .card {
+            position: absolute;
+            background: #0078d4;
+            color: white;
+            padding: 20px;
+            width: 400px;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: scale(0.5) translateX(100px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 5s ease-in-out;
+        }
+
+        .card.active {
+            opacity: 1;
+            transform: scale(1) translateX(0);
+        }
+
+        .card.exiting {
+            opacity: 0;
+            transform: scale(0) translateX(-100px);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Card Presentation</h1>
+
+    <section class="section">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            let currentIndex = 0;
+
+            const showCard = (index) => {
+                cards.forEach((card, i) => {
+                    card.classList.remove('active', 'exiting');
+                    if (i === index) {
+                        card.classList.add('active');
+                    } else if (i === (index - 1 + cards.length) % cards.length) {
+                        card.classList.add('exiting');
+                    }
+                });
+            };
+
+            const startCycle = () => {
+                showCard(currentIndex);
+                currentIndex = (currentIndex + 1) % cards.length;
+            };
+
+            setInterval(startCycle, 6000); // Change card every 3 seconds
+
+            startCycle();
+        });
+    </script>
+</body>
+</html>
